@@ -178,5 +178,3 @@ def about():
 def exit():
     return "Thanks for visiting!"
 
-if __name__ == '__main__':
-    app.run(debug=True)
