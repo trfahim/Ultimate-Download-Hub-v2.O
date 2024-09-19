@@ -19,5 +19,5 @@
 
 ## Project Live Link
 **https://ultimate-download-hub.onrender.com/**
-## ⚠️ Warning ⚠️
+## Warning
 Use of this website is at your own risk. Ultimate Download Hub does not guarantee the safety, security, or legality of the files available for download. By accessing and using this platform, you acknowledge that you are solely responsible for any actions taken and any consequences that may arise, including potential harm to your device, data, or personal information. Proceed with caution
