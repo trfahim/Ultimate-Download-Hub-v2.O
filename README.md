@@ -10,9 +10,9 @@
 - **Movies and Web Series**: Fetch the latest movies and series directly to your system.
 
 ## Technologies Used
-**Backend**: Python Flask for handling server-side logic and routing.
-**Frontend**: HTML and CSS for the user interface and experience.
-**Additional Tools**: Bootstrap for responsive design, jQuery for interactive elements.
+- **Backend**: Python Flask for handling server-side logic and routing.
+- **Frontend**: HTML and CSS for the user interface and experience.
+- **Additional Tools**: Bootstrap for responsive design, jQuery for interactive elements.
 
 ## Usage
 **Once the application is running, you can browse different categories like PC games, premium software, Android MOD apps, and movies/series. Each section will have various downloadable content with detailed instructions on how to download and install them.**
