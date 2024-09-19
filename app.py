@@ -136,25 +136,25 @@ def movies():
         
         
         if response_1 == 404:
-            game=0
+            movie=0
         else:
             download_link_1=search_url_1
             movie_found=True
         
         if response_2 == 404:
-            game=0
+            mmovie=0
         else:
             download_link_2=search_url_2
             movie_found=True
         
         if response_3 == 404:
-            game=0
+            movie=0
         else:
             download_link_3=search_url_3
             movie_found=True
         
         if response_4 == 404:
-            game=0
+            movie=0
         else:
             download_link_4=search_url_4
             movie_found=True
@@ -162,6 +162,8 @@ def movies():
            
         if response_1==404 and response_2==404 and response_3==404 and response_4==404:
             movie_found=False
+        else:
+            movie=0
             
     return render_template('movies.html',
                            movie_found=movie_found,
@@ -170,11 +172,61 @@ def movies():
                            download_link_3=download_link_3,
                            download_link_4=download_link_4)
 
-@app.route('/about')
+@app.route('/software', methods=['GET', 'POST'])
+def software():
+    sw_found = None
+    download_link_1 = None
+    download_link_2 = None
+    download_link_3 = None
+    
+    if request.method == 'POST':
+        sw_name = request.form['sw_name']
+
+        search_url_1 = f"https://haxnode.net/{(sw_name.replace(' ', '-')).lower()}"
+        response_1 = requests.get(f"{search_url_1}").status_code
+        
+        search_url_2 = f"https://{(sw_name.replace(' ', '-')).lower()}.en.softonic.com" 
+        response_2 = requests.get(f"{search_url_2}").status_code
+        
+        search_url_3 = f"https://getintopc.cc/{(sw_name.replace(' ', '-')).lower()}"
+        response_3 = requests.get(f"{search_url_3}").status_code
+        
+        if response_3 == 404:
+            game=0
+        else:
+            download_link_3=search_url_3
+            sw_found=True
+            
+        if response_2 == 404:
+            game=0
+        else:
+            download_link_2=search_url_2
+            sw_found=True
+            
+        if response_1 == 404:
+            game=0
+        else:
+            download_link_1=search_url_1
+            sw_found=True
+        
+        if response_1==404 and response_2==404:
+            sw_found=False
+        else:
+            game=0
+
+    return render_template('software.html',
+                           sw_found=sw_found,
+                           download_link_1=download_link_1,
+                           download_link_2=download_link_2,
+                           download_link_3=download_link_3)
+
+
+@app.route('/about', methods=['GET', 'POST'])
 def about():
     return render_template('about.html')
 
 @app.route('/exit')
 def exit():
     return "Thanks for visiting!"
+
 
