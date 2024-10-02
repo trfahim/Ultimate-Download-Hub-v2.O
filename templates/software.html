@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Software</title>
+    <link rel="icon" type="image/png" href="/static/logo.jpg">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pc-games">PC Games</a></li>
+            <li><a href="/android-games">Android Games</a></li>
+            <li><a href="/movies">Movies & Series</a></li>
+            <li><a href="/software">Premium Software</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/download">Instruction</a></li>
+        </ul>
+    </nav>
+    <header>
+        <marquee><b>| Ultimate Download Hub: Version-2.O | Author: @trfahim | 
+            ⚠️ Warning: Use of this website is at your own risk.
+            Ultimate Download Hub does not guarantee the safety, security,
+            or legality of the files available for download. By accessing and using this platform,
+            you acknowledge that you are solely responsible for any actions taken and any consequences that may arise,
+            including potential harm to your device, data, or personal information. Proceed with caution.</b></marquee>
+    </header>
+    <br><br>
+    <div class="container">
+        <h1>Download Windows Premium Software Free</h1>
+        
+        <br>
+        <form method="POST">
+            <input type="text" placeholder="Enter Software Name..." id="sw_name" name="sw_name" required>
+            <input type="submit" value="Search">
+        </form>
+        <br>
+
+        {% if sw_found is not none %}
+            {% if sw_found %}
+                <div id="result">
+                    <div class="link-show">
+                        <h2> Download link--1 ➡️: 
+                        <a href="{{ download_link_1 }}" target="_blank">
+                        <button class="open-link-button">{{download_link_1}}</button>  
+                        </a></h2>
+                        <h2> Download link--2 ➡️: 
+                        <a href="{{ download_link_2 }}" target="_blank">
+                        <button class="open-link-button">{{download_link_2}}</button>  
+                        </a></h2>
+                        <h2> Download link--3 ➡️: 
+                        <a href="{{ download_link_3 }}" target="_blank">
+                        <button class="open-link-button">{{download_link_3}}</button>  
+                        </a></h2>
+                    </div>    
+                </div>
+            {% else %}
+                <div id="result">
+                    <h3>Download Link Not Found ❌</h3>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
