@@ -58,7 +58,6 @@ def pc_games():
                            download_link_3=download_link_3,
                            )
     
-
 @app.route('/android-games', methods=['GET', 'POST'])
 def android_games():
     game_found = None
@@ -225,8 +224,16 @@ def software():
 def about():
     return render_template('about.html')
 
+
+@app.route('/download', methods=['GET', 'POST'])
+def download():
+    return render_template('download.html')
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    return render_template('contact.html')
+
 @app.route('/exit')
 def exit():
     return "Thanks for visiting!"
-
 
